@@ -1,10 +1,14 @@
 import React from "react";
+import { Nav } from "./components";
+import { Main } from "./pages";
 
 function App() {
   return (
-    <div className="App">
-      do brunch
-    </div>
+    <>
+      <Nav />
+      {/* 페이지별 라우팅 */}
+      <Main />
+    </>
   );
 }
 

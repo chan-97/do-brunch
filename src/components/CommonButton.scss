@@ -1,0 +1,12 @@
+@import "../style/mixin.scss";
+@import "../style/variable.scss";
+
+.button--default {
+  @include setFlex(center, center, null);
+  width: 4rem;
+  height: 1.75rem;
+  border: 1px solid $border-color-gray;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  color: $text-color-gray;
+}
