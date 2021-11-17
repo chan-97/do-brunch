@@ -1,0 +1,19 @@
+@import "../style/mixin.scss";
+@import "../style/variable.scss";
+
+.notice {
+  @include setFlex(flex-end, null, null);
+
+  &--state {
+    font-size: 0.688rem;
+    font-family: Georgia, sans-serif;
+    font-style: italic;
+    color: $emphasize-color;
+  }
+
+  &--title {
+    padding-left: 0.438rem;
+    font-size: 0.688rem;
+    color: $border-color-gray;
+  }
+}
