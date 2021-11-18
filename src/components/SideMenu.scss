@@ -1,0 +1,64 @@
+@import "../style/mixin.scss";
+@import "../style/variable.scss";
+
+.sidemenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 100%;
+  margin-left: -16.313rem;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+  z-index: 10000;
+
+  &-service {
+    height: 100%;
+    width: 16.25rem;
+    border-right: 1px solid #ddd;
+    background-color: #fff;
+
+    &--top {
+      @include setFlex(center, center, column);
+      height: 14.938rem;
+      border-bottom: 1px solid #ddd;
+      background: $background-color-gray;
+    }
+  }
+
+  &-logo {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.563rem;
+  }
+
+  &-slogan {
+    margin-bottom: 0.313rem;
+    font-family: Georgia;
+    font-size: 0.813rem;
+    font-style: italic;
+    line-height: 1.35;
+    text-align: center;
+    color: $text-color-gray;
+  }
+
+  &-slogan--writer {
+    margin-bottom: 0.813rem;
+    font-family: Georgia;
+    font-size: 0.625rem;
+    font-style: italic;
+    letter-spacing: 0.3px;
+    text-align: center;
+    color: $border-color-gray;
+  }
+
+  &-outside {
+    width: calc(100% - 16.25rem);
+    height: 100%;
+  }
+}
+
+.sidemenu--active {
+  width: 100%;
+  margin-left: 0;
+}

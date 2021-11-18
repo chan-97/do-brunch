@@ -1,8 +1,8 @@
 import React from "react";
 import "./CommonButton.scss";
 
-export function CommonButton() {
+export function CommonButton({ text, isBlue, handleClickButton }) {
   return(
-    <div className="button--default">시작하기</div>
+    <div className={`button--default ${isBlue && "button--blue"}`}>{text}</div>
   )
 }

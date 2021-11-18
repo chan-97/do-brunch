@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { CommonButton } from "./CommonButton";
+import { SideMenu } from "./SideMenu";
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import "./Nav.scss";
 
 export function Nav() {
+  const [isOpenSideMenu, setOpenSideMenu] = useState(false);
+
   return(
     <nav className="header">
       <div>
-        <MenuOutlinedIcon style={{ marginRight: "0.625rem" }} />
+        <MenuOutlinedIcon 
+          onClick={() => setOpenSideMenu(true)}
+          style={{ marginRight: "0.625rem" }} 
+        />
         <img 
           className="header__logo"
           alt="logo" 
@@ -15,8 +21,15 @@ export function Nav() {
         />
       </div>
       <div>
-        <CommonButton />
+        <CommonButton 
+          text="시작하기"
+          isBlue={false}
+        />
       </div>
+      <SideMenu
+        isOpen={isOpenSideMenu}
+        closeSideMenu={() => setOpenSideMenu(false)}
+      />
     </nav>
   )
 }

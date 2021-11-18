@@ -1,0 +1,44 @@
+@import "../style/mixin.scss";
+@import "../style/variable.scss";
+
+.sidemenu--list {
+  padding-top: 1.75rem;
+
+  &item {
+    @include setFlex(center, center, null);
+    padding: 0.781rem 0.625rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+
+    &-bar-left {
+      display: none;
+      width: 2.188rem;
+      margin-right: 0.5rem;
+      border-bottom: 1px solid $emphasize-color;
+    }
+
+    &-bar-right {
+      display: none;
+      width: 2.188rem;
+      margin-left: 0.5rem;
+      border-bottom: 1px solid $emphasize-color;
+    }
+
+    &:hover {
+      color: $emphasize-color;
+    }
+
+    &:hover &-bar-left,
+    &:hover &-bar-right {
+      display: block;
+    }
+  }
+}
+
+.list--active {
+  color: $emphasize-color;
+}
+
+.bar--active {
+  display: block;
+}

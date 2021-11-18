@@ -3,10 +3,16 @@
 
 .button--default {
   @include setFlex(center, center, null);
-  width: 4rem;
+  padding: 0 0.75rem;
   height: 1.75rem;
   border: 1px solid $border-color-gray;
   border-radius: 16px;
   font-size: 0.75rem;
   color: $text-color-gray;
+  cursor: pointer;
+}
+
+.button--blue {
+  border: 1px solid $emphasize-color;
+  color: $emphasize-color;
 }
