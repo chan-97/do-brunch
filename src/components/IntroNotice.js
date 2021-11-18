@@ -4,23 +4,36 @@ import axios from "axios";
 
 export function IntroNotice() {
   const [noticeList, setNoticeList] = useState([]);
-  const [listItem, setListItem] = useState({});
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     axios.get("/data/introNotice.json")
-    .then(res => console.log(res.data))
-
-    // 1. axios.get 받아와서 setNoticeList
-    // 2. noticeList 의 length 가 0 이상이면 setInterval 걸어서 setListItem(noticeList[n])
-
+    .then(res => setNoticeList(res.data));
   }, []);
+
+  useEffect(() => {
+    const activeTimeout = setTimeout(() => {
+      setActiveIndex((prev) => {
+        return prev === noticeList.length - 1 ? 0 : prev + 1;
+      })
+    }, 5000);
+
+    return () => clearTimeout(activeTimeout);
+  }, [activeIndex]);
 
   return(
     <ul className="notice">
-      <li>
-        <span className="notice--state">Notice</span>
-        <span className="notice--title">[사전 안내] SNS '공유 수' 기능 종료</span>
-      </li>
+      {noticeList.map((notice, idx) => {
+        return(
+          <li 
+            className={`${activeIndex === idx ? "notice__list--active" : "notice__list"}`} 
+            key={notice.title}
+          >
+            <span className="notice--state">{notice.state}</span>
+            <span className="notice--title">{notice.title}</span>
+          </li>
+        )
+      })}
     </ul>
   )
 }

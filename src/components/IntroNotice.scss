@@ -4,6 +4,14 @@
 .notice {
   @include setFlex(flex-end, null, null);
 
+  &__list {
+    display: none;
+  }
+
+  &__list--active {
+    display: block;
+  }
+
   &--state {
     font-size: 0.688rem;
     font-family: Georgia, sans-serif;
