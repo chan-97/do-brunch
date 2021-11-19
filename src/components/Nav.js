@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { CommonButton } from "./CommonButton";
 import { SideMenu } from "./SideMenu";
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
@@ -14,11 +15,13 @@ export function Nav() {
           onClick={() => setOpenSideMenu(true)}
           style={{ marginRight: "0.625rem" }} 
         />
-        <img 
-          className="header__logo"
-          alt="logo" 
-          src="https://news.nateimg.co.kr/orgImg/ni/2021/03/15/2103150905385390.jpg" 
-        />
+        <Link to="/">
+          <img 
+            className="header__logo"
+            alt="logo" 
+            src="https://news.nateimg.co.kr/orgImg/ni/2021/03/15/2103150905385390.jpg" 
+          />
+        </Link>
       </div>
       <div>
         <CommonButton 

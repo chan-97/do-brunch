@@ -1,14 +1,17 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Nav } from "./components";
-import { Main } from "./pages";
+import { Main, Now } from "./pages";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Nav />
-      {/* 페이지별 라우팅 */}
-      <Main />
-    </>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/now" element={<Now />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

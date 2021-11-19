@@ -23,7 +23,7 @@ export function SideMenu({ isOpen, closeSideMenu }) {
             isBlue={true}
           />
         </div>
-        <SideMenuList />
+        <SideMenuList closeSideMenu={closeSideMenu} />
       </div>
       <div 
         onClick={closeSideMenu}
