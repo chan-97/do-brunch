@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CommonButton } from "./CommonButton";
 import { SideMenu } from "./SideMenu";
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
@@ -7,6 +7,7 @@ import "./Nav.scss";
 
 export function Nav() {
   const [isOpenSideMenu, setOpenSideMenu] = useState(false);
+  const { pathname } = useLocation();
 
   return(
     <nav className="header">
@@ -23,11 +24,9 @@ export function Nav() {
           />
         </Link>
       </div>
+      {pathname === "/now" && <span className="header--title">브런치 나우</span>}
       <div>
-        <CommonButton 
-          text="시작하기"
-          isBlue={false}
-        />
+        {pathname === "/" && <CommonButton text="시작하기" isBlue={false} />}
       </div>
       <SideMenu
         isOpen={isOpenSideMenu}

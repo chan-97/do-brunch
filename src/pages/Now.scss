@@ -1,0 +1,47 @@
+@import "../style/mixin.scss";
+@import "../style/variable.scss";
+
+.now {
+  padding-top: 0.625rem;
+  margin: 0 23.125rem;
+
+  &__listitem {
+    @include setFlex(space-between, null, null);
+    padding: 1.563rem 0 1.875rem;
+    border-bottom: 1px solid #eee;
+
+    &--content {
+      @include setFlex(space-between, null, column);
+    }
+  }
+
+  &__list-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  &__list-paragraph {
+    max-height: 2.5rem;
+    padding-top: 0.313rem;
+    font-size: 0.875rem;
+    color: $text-color-gray;
+    overflow: hidden;
+  }
+
+  &__list-writer {
+    padding-top: 2.5rem;
+    font-size: 0.75rem;
+    font-family: "Noto Sans Light";
+    color: $border-color-gray;
+
+    .icon-by {
+      font-family: Georgia;
+      font-style: italic;
+      color: #bfbfbf;
+    }
+  }
+
+  &__list-image {
+    margin: 0.313rem 0 0 2.5rem;
+  }
+}
