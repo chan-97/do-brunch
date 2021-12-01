@@ -3,6 +3,11 @@ import "./CommonButton.scss";
 
 export function CommonButton({ text, isBlue, handleClickButton }) {
   return(
-    <div className={`button--default ${isBlue && "button--blue"}`}>{text}</div>
+    <div 
+      onClick={handleClickButton}
+      className={`button--default ${isBlue && "button--blue"}`}
+    >
+      {text}
+    </div>
   )
 }

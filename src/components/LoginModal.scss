@@ -1,0 +1,36 @@
+@import "../style/mixin.scss";
+@import "../style/variable.scss";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include setFlex(center, center, null);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 20000;
+
+  &-container {
+    display: flex;
+    width: 62.5rem;
+    height: 38.125rem;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  &__section--left {
+    width: 50%;
+    height: 100%;
+    padding: 8.75rem 0 6.313rem;
+  }
+
+  &__section--right {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    padding: 5.875rem 2.938rem 4.5rem;
+    background-color: $background-color-gray;
+  }
+}

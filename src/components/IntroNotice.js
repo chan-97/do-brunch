@@ -1,25 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { useInterval } from "../hooks";
 import "./IntroNotice.scss";
 import axios from "axios";
 
 export function IntroNotice() {
   const [noticeList, setNoticeList] = useState([]);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex] = useInterval(noticeList, 6000);
 
   useEffect(() => {
     axios.get("/data/introNotice.json")
     .then(res => setNoticeList(res.data));
   }, []);
-
-  useEffect(() => {
-    const activeTimeout = setTimeout(() => {
-      setActiveIndex((prev) => {
-        return prev === noticeList.length - 1 ? 0 : prev + 1;
-      })
-    }, 5000);
-
-    return () => clearTimeout(activeTimeout);
-  }, [activeIndex]);
 
   return(
     <ul className="notice">

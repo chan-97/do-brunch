@@ -3,7 +3,7 @@ import { CommonButton } from "./CommonButton";
 import { SideMenuList } from "./SideMenuList";
 import "./SideMenu.scss";
 
-export function SideMenu({ isOpen, closeSideMenu }) {
+export function SideMenu({ isOpen, closeSideMenu, openLoginModal }) {
   return(
     <main className={`sidemenu ${isOpen && "sidemenu--active"}`}>
       <div className="sidemenu-service">
@@ -19,6 +19,7 @@ export function SideMenu({ isOpen, closeSideMenu }) {
           </p>
           <p className="sidemenu-slogan--writer">- C.S.Lewis -</p>
           <CommonButton 
+            handleClickButton={openLoginModal}
             text="브런치 시작하기"
             isBlue={true}
           />
