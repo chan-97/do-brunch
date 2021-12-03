@@ -28,6 +28,7 @@
 
   &__section--right {
     position: relative;
+    @include setFlex(center, center, null);
     width: 50%;
     height: 100%;
     padding: 5.875rem 2.938rem 4.5rem;

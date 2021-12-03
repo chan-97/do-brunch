@@ -4,11 +4,7 @@ export function useInterval(passedArr, interval) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    const activeTimeout = setTimeout(() => {
-      setActiveIndex((prev) => {
-        return prev === passedArr.length - 1 ? 0 : prev + 1;
-      })
-    }, interval);
+    const activeTimeout = setTimeout(plusActiveIndex, interval);
 
     return () => clearTimeout(activeTimeout);
   }, [activeIndex]);

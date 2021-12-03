@@ -1,5 +1,6 @@
 import React from "react";
 import { LoginModalSlide } from "./LoginModalSlide";
+import { ModalForm } from "./ModalForm";
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import "./LoginModal.scss";
 
@@ -17,6 +18,7 @@ export function LoginModal({ isOpen, closeLoginModal, loginModalSlide }) {
               onClick={closeLoginModal}
               style={{ width: "2.5rem", height: "2.5rem", position: "absolute", top: 20, right: 20 }} 
             />
+            <ModalForm />
           </section>
         </div>
       </div>
